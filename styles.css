@@ -1,0 +1,193 @@
+:root {
+    --background-color: #b8b7fa;
+    --nav-fundo: #95b061;
+    --nav-header: #fdfdfd;
+    --texto-default: #000;
+    --titulo-color: #046d1e;
+    --nav-color: #ac9bfa;
+    --nav-hover-color: #799e7e;
+    --nav-mobile-background: #bdf5c0;
+    --nav-dropdown-background: #fdfdfd;
+    --nav-dropdown-hover-color: #fdfdfd; /* Corrigido o nome da variável */
+   }
+   
+   body {
+       background: var(--background-color);
+       color: var(--texto-default);
+   }
+   
+   a {
+       text-decoration: none;
+       transition: 0.3s;
+   }
+   
+   /* HEADER */
+   
+   .header {
+       color: var(--texto-default);
+       padding: 5px;
+       background: var(--nav-dropdown-background);
+       box-shadow: 9px 10px 100px #8001ff;
+   }
+   
+   .header .topbar {
+       background: var(--nav-fundo);
+       color: var(--nav-dropdown-background);
+       height: 40px;
+   }
+   
+   .header .branding {
+       min-height: 60px;
+       padding: 10px 0;
+   }
+   
+   .header .logo {
+       line-height: 1;
+   }
+   
+   .header .logo img {
+       max-height: 36px;
+       margin-right: 8px;
+   }
+   
+   .icone i {
+       margin-right: 8px;
+   }
+   
+   .cta-btn {
+       color: #000;
+       background-color: #ac9bfa;
+       padding: 10px;
+       margin: 5px;
+       border-radius: 10px;
+   }
+   
+   .cta-btn:hover {
+       background-color: #799e7e;
+       color: #fdfdfd;
+   }
+   
+   /* Nav menu Desktop */
+   @media (min-width: 1200px) {
+       .navmenu {
+           padding: 0;
+       }
+   
+       .navmenu ul {
+           list-style: none;
+           margin: 0;
+           padding: 0;
+           display: flex;
+           align-items: center;
+       }
+       .navmenu li {
+           position: relative;
+       }
+       .navmenu a {
+           color: var(--nav-color);
+           padding: 1px 20px;
+           font-size: 15px;
+           font-family: Arial, Helvetica, sans-serif;
+           font-weight: 500;
+           text-transform: uppercase;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           white-space: nowrap;
+       }
+   
+       .navmenu li:hover > a,
+       .navmenu .active,
+       .navmenu .active:focus {
+           color: var(--nav-hover-color);
+       }
+   
+       .navmenu .dropdown ul {
+           margin: 0;
+           padding: 10px 0;
+           background: var(--nav-dropdown-hover-color);
+           display: block;
+           position: absolute;
+           visibility: hidden;
+           left: 14px;
+           top: 130%;
+           opacity: 0;    
+           border-radius: 4px;
+           z-index: 99;
+       }
+   
+       .navmenu .dropdown:hover > ul {
+           opacity: 1;
+           top: 100%;
+           visibility: visible;
+       }
+   }
+   
+   /* Hero */
+   .hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .carousel {
+    position: relative;
+}
+
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--nav-hover-color); /* Cor creme com transparência */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    color: #000; /* Cor do texto */
+    z-index: 2; /* Certifique-se de que esteja acima das imagens */
+    text-align: center; /* Centraliza o texto */
+}
+
+.proximo, .anterior {
+    z-index: 3; /* Acima do texto e das imagens */
+}
+
+/* Ajustes adicionais se necessário */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 14px; /* Ajusta o tamanho do texto em telas menores */
+    }
+}
+
+   
+   /* Botões do carrossel */
+   .proximo, .anterior {
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       background-color: rgba(255, 255, 255, 0.7);
+       border: none;
+       border-radius: 50%;
+       padding: 10px;
+       cursor: pointer;
+       z-index: 2;
+   }
+   
+   .proximo {
+       left: 20px;
+   }
+   
+   .anterior {
+       right: 20px;
+   }
+   
+   .proximo:hover, .anterior:hover {
+       background-color: var(--nav-fundo);
+   }
+   
